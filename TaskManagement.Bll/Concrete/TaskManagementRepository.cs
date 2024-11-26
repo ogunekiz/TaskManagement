@@ -19,7 +19,7 @@ namespace TaskManagement.Bll.Concrete
         public Task? GetById(int id)
         {
             Task? task = _context.Tasks
-                //.AsNoTracking()
+                .AsNoTracking()
                 .FirstOrDefault(x => x.Id == id);
             return task;
         }

@@ -9,7 +9,8 @@
     }
   },
   "profiles": {
-    "http": {
+    "TaskManagement.Server": {
+      //"http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -31,4 +32,3 @@
     }
   }
 }
-
