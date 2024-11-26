@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using TaskManagement.Bll.Abstract;
+using TaskManagement.Bll.Concrete;
 using TaskManagement.Dal.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<TaskManagementDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DBConnection")));
+
+builder.Services.AddScoped<ITaskManagementService, TaskManagementRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
